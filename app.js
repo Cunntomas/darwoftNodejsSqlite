@@ -2,12 +2,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const routes = require('./lib/routes');
+const db = require('./config/database');
 
 
 function initDB() {
-    // Database
-    const db = require('./config/database');
-
     // Test DB
     return db.authenticate()
         .then(() => console.log('Database connected...'))
